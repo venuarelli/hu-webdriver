@@ -5,11 +5,11 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.hu.webdriver.pages.NewsFeedPage;
-import com.hu.webdriver.tests.BaseTest;
+import com.hu.webdriver.tests.BaseLoginWebDriverTest;
 /**
  * @author Venu
  */
-public class NewsFeedTest extends BaseTest{
+public class NewsFeedTest extends BaseLoginWebDriverTest{
 	
 	NewsFeedPage newsFeedPage;
 	@BeforeClass

@@ -8,9 +8,6 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import com.hu.webdriver.pages.NewsFeedPage;
-import com.hu.webdriver.pages.homepage.HUHomePage;
-import com.hu.webdriver.pages.login.HULoginPage;
 import com.hu.webdriver.utils.HUPropertyUtil;
 
 /**
@@ -20,9 +17,9 @@ import com.hu.webdriver.utils.HUPropertyUtil;
  */
 public class BaseTest {
 
-	/*
+	/**
 	 * Instance variable for Webdriver.
-	 */
+	* */
 	public WebDriver webDriver;
 	public HUPropertyUtil propertyUtil;
 	
@@ -85,16 +82,5 @@ public class BaseTest {
 	@AfterTest
 	public void logOutFromHU(){
 		this.webDriver.quit();
-	}
-	
-	/**
-	 * Method to login HU and navigate to News feed page.
-	 * @return
-	 */
-	public NewsFeedPage loginHUAndNavigateToNewsFeedPage(){
-		HUHomePage homePage = new HUHomePage(webDriver);
-		HULoginPage loginPage = homePage.clickOnLoginButton();
-		loginPage.loginHU();
-		return new NewsFeedPage(webDriver);
 	}
 }
