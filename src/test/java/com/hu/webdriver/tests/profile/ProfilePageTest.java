@@ -14,9 +14,16 @@ import com.hu.webdriver.tests.BaseLoginWebDriverTest;
  *
  */
 public class ProfilePageTest extends BaseLoginWebDriverTest{
+	/**
+	 * Instance variable for ProfilePage.
+	 */
 	ProfilePage profilePage;
+	/**
+	 * Before Class for Login nad Navigate to ProfilePage.
+	 */
 	@BeforeClass
 	public void beforeMethodNavigateToProfile(){
+		//Login and Navigate to ProfilePage.
 		profilePage = loginHUAndNavigateToProfilePage();
 	}
 	/**

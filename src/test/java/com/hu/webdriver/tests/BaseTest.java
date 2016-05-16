@@ -16,6 +16,12 @@ import com.hu.webdriver.utils.HUPropertyUtil;
  *
  */
 public class BaseTest {
+	
+	 public static final int MAXIMUM = 30;
+	 public static final int MINIMUM = 10;
+	 public static final int ONE = 1;
+	 public static final int TWO = 2;
+	 public static final int FIVE = 5;
 
 	/**
 	 * Instance variable for Webdriver.
