@@ -8,7 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.hu.webdriver.pages.BasePage;
 import com.hu.webdriver.pages.login.HULoginPage;
-
+/**
+ * This class contains all HUHomePage Features.
+ * @author venu
+ *
+ */
 public class HUHomePage extends BasePage{
 
 	/**

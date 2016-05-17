@@ -122,18 +122,30 @@ public class MessagesTest  extends BaseLoginWebDriverTest{
 	 */
 	@Test(description = "Test Case to verify Compose A Message.")
 	public void testComposeMessage(){
+		//Click on compose button.
 		messagesPage.clickOnComposeButton();
+		//Get recipient name from property file.
 		String addRecipients = propertyUtil.getProperty("messages.addrecipients1");
+		//Click on add recipients.
 		messagesPage.clickOnAddRecipients(addRecipients);
+		//wait for five seconds.
 		messagesPage.waitForSeconds(FIVE);
+		//click on add recipients then click Enter.
 		messagesPage.clickOnAddRecipients(""+Keys.ENTER);
+		//Get subject from property file.
 		String subject = propertyUtil.getProperty("messages.subject");
+		//enter subject.
 		messagesPage.enterSubject(subject);
+		//Get message from property file.
 		String message = propertyUtil.getProperty("messages.message");
+		//enter message.
 		messagesPage.enterMessage(message);
+		//clickon send message button.
 		messagesPage.clickOnSendMessageButton();
+		//Get actual and expected text.
 		String actualText = messagesPage.getComposeText();
 		String expectedText = propertyUtil.getProperty("messages.compose");
+		//verify compose text is matched with expected or not.
 		Assert.assertEquals(actualText, expectedText,"Compose text is not matched with expected.");
 	}
 	/**
@@ -141,16 +153,26 @@ public class MessagesTest  extends BaseLoginWebDriverTest{
 	 */
 	@Test(description = "Test Case to verify EmptySubject.")
 	public void testEmptySubject(){
+		//click on compose button.
 		messagesPage.clickOnComposeButton();
+		//Get recipient name from property file.
 		String addRecipients = propertyUtil.getProperty("messages.addrecipients1");
+		//click on add recipients.
 		messagesPage.clickOnAddRecipients(addRecipients);
+		//wait for five seconds.
 		messagesPage.waitForSeconds(FIVE);
+		//click on addrecipients then click enter.
 		messagesPage.clickOnAddRecipients(""+Keys.ENTER);
+		//Get message from property file.
 		String message = propertyUtil.getProperty("messages.message");
+		//enter message.
 		messagesPage.enterMessage(message);
+		//click on send message button.
 		messagesPage.clickOnSendMessageButton();
+		//Get actual and expected text.
 		String actualText = messagesPage.getSubjectRequiredText();
 		String expectedText = propertyUtil.getProperty("messages.subjectrequired");
+		//verify Subject is required text is matched with expected or not.
 		Assert.assertEquals(actualText, expectedText,"SubjectRequired Text is not matched with Expected.");
 	}
 	/**
@@ -158,16 +180,26 @@ public class MessagesTest  extends BaseLoginWebDriverTest{
 	 */
 	@Test(description = "Test Case to verify Empty Message.")
 	public void testEmptyMessage(){
+		//click on compose button.
 		messagesPage.clickOnComposeButton();
+		//Get recipient name from propertyfile.
 		String addRecipients = propertyUtil.getProperty("messages.addrecipients1");
+		//click on addrecipients.
 		messagesPage.clickOnAddRecipients(addRecipients);
+		//wait for five seconds.
 		messagesPage.waitForSeconds(FIVE);
+		//click on addrecipients then click Enter.
 		messagesPage.clickOnAddRecipients(""+Keys.ENTER);
+		//Get subject from propertyfile.
 		String subject = propertyUtil.getProperty("messages.subject");
+		//enter subject.
 		messagesPage.enterSubject(subject);
+		//click on sand message button.
 		messagesPage.clickOnSendMessageButton();
+		//Get actual and expected text.
 		String actualText = messagesPage.getBodyIsRequiredText();
 		String expectedText = propertyUtil.getProperty("messagess.bodyisrequired");
+		//verify body is required text is matched with expected or not.
 		Assert.assertEquals(actualText, expectedText,"Body Is Required Text Is not matched with Expected.");
 	}/*
 	*//**
@@ -198,10 +230,15 @@ public class MessagesTest  extends BaseLoginWebDriverTest{
 	 */
 	@Test(description = "Test Case to verify Send message from user profile.")
 	public void testSendMessageFromUserProfile(){
+		//click on public user.
 		newsFeedPage.clickOnPublicUser();
+		//get addrecipient name from public user profilepage.
 		String addRecipient = publicUserProfilePage.getPublicUserProfileName();
+		//click on message button.
 		publicUserProfilePage.clickOnMessageBUtton();
+		//get list of add recipient names.
 		List<String>recipientNames = messagesPage.getRecipientsNames();
+		//verify reciepient name matched with expected or not.
 		Assert.assertTrue(recipientNames.toString().contains(addRecipient),"recipientName  not matched with expected.");
 	}
 }

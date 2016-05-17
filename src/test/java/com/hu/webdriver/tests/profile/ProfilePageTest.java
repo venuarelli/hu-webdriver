@@ -31,6 +31,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 	 */
 	@Test(description = "Test Case to verify Enter BIO.")
 	public void testEnterBIO(){
+		//Get bio from propetyfile.
 		String bio = propertyUtil.getProperty("hu_bio");
 		//Enetr BIO Data.
 		profilePage.fillYourBio(bio);
@@ -139,7 +140,8 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 		//Click On Save Changes.
 		profilePage.clickOnSaveChangesButton();
 		//Get Profile Page Text.
-		profilePage.getProfilePageText();
+		String text = propertyUtil.getProperty("profile.profiletext");
+		profilePage.getProfilePageText(text);
 		//Creting Object for Update ProfilePage.
 		UpDateProfilePage upDateProfilePage = new UpDateProfilePage(webDriver);
 		//Get actual and Expected text.

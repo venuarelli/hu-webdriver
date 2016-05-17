@@ -58,8 +58,7 @@ public class NewsFeedPage extends BasePage{
 	 * @return newsfeed text
 	 */
 	public String getNewsFeedText(){
-		WebDriverWait wait = new WebDriverWait(driver, MAXIMUM);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//li/a[text()='News Feed'])[1]")));
+		findVisibleElement(By.xpath("(//li/a[text()='News Feed'])[1]"), MAXIMUM);
 		return  newsFeed.getText();
 	}
 	/**
@@ -76,6 +75,9 @@ public class NewsFeedPage extends BasePage{
 		findVisibleElement(By.xpath("(//span[@class='icon-down-open-1'])[1]"), MAXIMUM);
 		userMenuDropdown.click();
 	}
+	/**
+	 * Method to click on messages.
+	 */
 	public void clickOnMessages(){
 		findVisibleElement(By.xpath("(//span[@class='icon-down-open-1'])[1]"), MAXIMUM);
 		userMenuDropdown.click();
@@ -92,7 +94,7 @@ public class NewsFeedPage extends BasePage{
 	}
 	/**
 	 * Method to Click On Public User.
-	 * @return 
+	 * @return PublicUserProfilePage.
 	 */
 	public PublicUserProfilePage clickOnPublicUser(){
 		findVisibleElement(By.xpath("(//img[@class='avatar-img'])[3]"), MAXIMUM);

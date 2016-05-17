@@ -27,8 +27,13 @@ public class BaseTest {
 	 * Instance variable for Webdriver.
 	* */
 	public WebDriver webDriver;
+	/**
+	 * Instance Variable for HUpropertyUtil
+	 */
 	public HUPropertyUtil propertyUtil;
-	
+	/**
+	 * Method  for BaseTest.
+	 */
 	public BaseTest(){
 		propertyUtil = new HUPropertyUtil();
 	}
@@ -83,7 +88,7 @@ public class BaseTest {
 	}
 	
 	/**
-	 * After test for logout from the page and navigate to home page.
+	 * After test logout from the page and navigate to home page.
 	 */
 	@AfterTest
 	public void logOutFromHU(){

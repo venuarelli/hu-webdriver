@@ -44,8 +44,8 @@ public class HULoginPage extends BasePage{
 		clearAndType(this.password, password);
 	}
 	/**
-	 * Method to Click On Submit Button and Navigate to NewsFedd Page
-	 * @return mewsfeedPage
+	 * Method to Click On Submit Button and Navigate to NewsFeed Page
+	 * @return newsfeedPage
 	 */
 	public NewsFeedPage clickOnSubmit(){
 		login.click();

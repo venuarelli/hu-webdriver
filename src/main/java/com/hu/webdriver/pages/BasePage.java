@@ -53,16 +53,27 @@ public class BasePage {
 		element.clear();
 		element.sendKeys(text);
 	}
-	
+	/**
+	 * Method to implicityWait.
+	 * @param seconds
+	 */
 	public void implicityWait(int seconds){ 
 		driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
 	}
-
+	/**
+	 * Method to findvisibleElement.
+	 * @param by
+	 * @param seconds
+	 */
 	public void findVisibleElement(By by, int seconds) {
 		WebDriverWait wait = new WebDriverWait(driver, seconds);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
-
+	/**
+	 * Method too get list of strings.
+	 * @param elements
+	 * @return list.
+	 */
 	public List<String> getListOfStrings(List<WebElement> elements){
 		List<String> list = new ArrayList<String>();
 		for(WebElement element : elements){
@@ -96,7 +107,11 @@ public class BasePage {
 			e.printStackTrace();
 		}
 	 }
-	
+	/**
+	 * Methhod for isdisplayed.
+	 * @param by
+	 * @return
+	 */
 	public boolean isDisplayed(By by){
 		boolean isDisplayed = false;
 		try{

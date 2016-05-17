@@ -42,7 +42,7 @@ public class ProfilePage extends BasePage {
 	@FindBy(xpath = "//input[@value='Save changes']")
 	WebElement saveChanges;
 	/**
-	 * WebElemnt for DropDown For Profile
+	 * WebElement for DropDown For Profile
 	 */
 	@FindBy(xpath = "(//span[@class='icon-down-open-1'])[1]")
 	WebElement dropDownForProfile;
@@ -52,7 +52,7 @@ public class ProfilePage extends BasePage {
 	@FindBy(id = "sitebar-profile-button")
 	WebElement profile;
 	/**
-	 * WebElemnt for following
+	 * WebElement for following
 	 */
 	@FindBy(xpath = "//span[text()='Following']")
 	WebElement following;
@@ -117,26 +117,15 @@ public class ProfilePage extends BasePage {
 	@FindBy(xpath = "(//select[contains(class,day)])[3]")
 	WebElement yearDropDown;
 	/**
-	 * WebElement for Country DropDown
-	 */
-	@FindBy(xpath = "(//select[contains(class,day)])[4]")
-	WebElement countryDropDown;
-	/**
 	 * WebElement for ProfilePageText
 	 */
-	@FindBy(xpath = "//span[text()='Hi! I’m aarellivenu']")
+	@FindBy(xpath = "//h1[@class='entity-header-title']")
 	WebElement profilePageText;
 	/**
 	 * ` WebElement for Male
 	 */
 	@FindBy(xpath = "//span[text()='Male']")
 	WebElement male;
-
-	/**
-	 * WebElement for PostalCode
-	 */
-	@FindBy(xpath = "(//input[@type='text'])[5]")
-	WebElement postalcode;
 	/**
 	 * WebElement for BIO Clear.
 	 */
@@ -152,27 +141,29 @@ public class ProfilePage extends BasePage {
 	 * Method to click On UpdateProfile
 	 */
 	public void clickOnUpdateProfile() {
-		findVisibleElement(By.xpath("//a[@href='/profile/edit']"), 30);
+		findVisibleElement(By.xpath("//a[@href='/profile/edit']"), MAXIMUM);
 		updateProfile.click();
 	}
 
 	/**
 	 * Method to Fill Your Bio
+	 * @param bio.
 	 */
 	public void fillYourBio(String bio) {
-		findVisibleElement(By.name("limitedTextArea"), 30);
+		findVisibleElement(By.name("limitedTextArea"), MAXIMUM);
 		clearAndType(fillYourBio, bio);
 	}
 
 	/**
-	 * Method to Click On SavChanges Button
+	 * Method to Click On SavChanges Button.
 	 */
 	public void clickOnSaveChangesButton() {
 		saveChanges.click();
 	}
 
 	/**
-	 * Method to Edit Your Bio
+	 * Method to Edit Your Bio.
+	 * @param editBIO.
 	 */
 	public void editYourBio(String editBIO) {
 		findVisibleElement(By.name("limitedTextArea"), 30);
@@ -226,6 +217,7 @@ public class ProfilePage extends BasePage {
 
 	/**
 	 * Method to Enter Symptom
+	 * @param  symptom.
 	 */
 	public void enterSymptom(String symptom) {
 		clearAndType(this.symptom, symptom);
@@ -233,6 +225,7 @@ public class ProfilePage extends BasePage {
 
 	/**
 	 * Method to Enter Condition
+	 * @param condition.
 	 */
 	public void enterCondition(String condition) {
 		clearAndType(this.condition, condition);
@@ -240,6 +233,7 @@ public class ProfilePage extends BasePage {
 
 	/**
 	 * Method to Enter Treatment
+	 * @param treatement.
 	 */
 	public void enterTreatement(String treatement) {
 		clearAndType(this.treatement, treatement);
@@ -277,6 +271,7 @@ public class ProfilePage extends BasePage {
 
 	/**
 	 * Method to Select Date Drop Down
+	 * @param date.
 	 */
 	public void selectDateDropDown(String date) {
 		findVisibleElement(By.xpath("(//select[contains(class,day)])[1]"), 30);
@@ -286,6 +281,7 @@ public class ProfilePage extends BasePage {
 
 	/**
 	 * Method to Select Month Drop Down
+	 * @param month.
 	 */
 	public void selectMonthDropDown(String month) {
 		findVisibleElement(By.xpath("(//select[contains(class,month)])[2]"), 30);
@@ -295,49 +291,32 @@ public class ProfilePage extends BasePage {
 
 	/**
 	 * Method to Slect Year Drop down
+	 * @param year.
 	 */
 	public void selectYearDropDown(String year) {
 		findVisibleElement(By.xpath("(//select[contains(class,year)])[3]"), 30);
 		Select select = new Select(yearDropDown);
 		select.selectByVisibleText(year);
 	}
-
-	/**
-	 * Method to Select Country Drop Down
-	 */
-	public void selectCountryDropDown() {
-		Select select = new Select(countryDropDown);
-		select.selectByVisibleText("India");
-	}
-
 	/**
 	 * Method to getProfilePageText
 	 * 
-	 * @return
+	 * @return text
 	 */
 	public String getProfilePageText() {
-		findVisibleElement(By.xpath("//span[text()='Hi! I’m aarellivenu']"), 30);
+		findVisibleElement(By.xpath("//h1[@class='entity-header-title']"), MAXIMUM);
 		String text = profilePageText.getText();
 		return text;
 	}
 
 	/**
-	 * Methdo to Set Gender
+	 * Method to Set Gender
 	 */
 	public void setGender() {
-		findVisibleElement(By.xpath("//span[text()='Male']"), 30);
+		findVisibleElement(By.xpath("//span[text()='Male']"), MAXIMUM);
 		male.click();
 	}
-
-	/**
-	 * Method to Set Postal Code
-	 */
-	public void setPostalCode() {
-		postalcode.sendKeys("500089");
-	}
-
-	/**
-	 * Method to Click On EditProfile Button.
+	/** Method to Click On EditProfile Button.
 	 */
 	public void clickOnEditProfile() {
 		editProfile.click();
@@ -348,7 +327,7 @@ public class ProfilePage extends BasePage {
 	 */
 	public void clearBIO() {
 		clickOnEditProfile();
-		findVisibleElement(By.name("limitedTextArea"), 30);
+		findVisibleElement(By.name("limitedTextArea"), MAXIMUM);
 		fillYourBio.clear();
 		clickOnSaveChangesButton();
 	}
