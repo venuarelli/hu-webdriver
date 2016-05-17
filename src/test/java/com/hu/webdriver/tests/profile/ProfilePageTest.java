@@ -140,8 +140,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 		//Click On Save Changes.
 		profilePage.clickOnSaveChangesButton();
 		//Get Profile Page Text.
-		String text = propertyUtil.getProperty("profile.profiletext");
-		profilePage.getProfilePageText(text);
+		profilePage.getProfilePageText();
 		//Creting Object for Update ProfilePage.
 		UpDateProfilePage upDateProfilePage = new UpDateProfilePage(webDriver);
 		//Get actual and Expected text.
