@@ -5,9 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.hu.webdriver.pages.BasePage;
-
+/**
+ * This class contains all Publiuserprofilepage features.
+ * @author venu
+ *
+ */
 public class PublicUserProfilePage extends BasePage {
 
 	/**

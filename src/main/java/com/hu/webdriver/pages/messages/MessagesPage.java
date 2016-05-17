@@ -1,13 +1,11 @@
 package com.hu.webdriver.pages.messages;
 
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.hu.webdriver.pages.BasePage;
 /**
  * This Class contains all MessagesPage features.
@@ -234,7 +232,7 @@ public class MessagesPage extends BasePage{
 	}
 	/**
 	 * Method to get SubjectRequired text.
-	 * @return
+	 * @return text.
 	 */
 	public String getSubjectRequiredText(){
 		findVisibleElement(By.xpath("//*[contains(text(),'Subject')]"), MAXIMUM);
@@ -243,7 +241,7 @@ public class MessagesPage extends BasePage{
 	}
 	/**
 	 * Method to get Body required Text.
-	 * @return
+	 * @return text.
 	 */
 	public String getBodyIsRequiredText(){
 		findVisibleElement(By.xpath("//*[contains(text(),'Body')]"), MAXIMUM);

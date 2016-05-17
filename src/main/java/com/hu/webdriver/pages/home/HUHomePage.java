@@ -16,14 +16,14 @@ import com.hu.webdriver.pages.login.HULoginPage;
 public class HUHomePage extends BasePage{
 
 	/**
-	 * WebElment for LoginButton
+	 * WebElement for LoginButton
 	 */
 	@FindBy (xpath = "(//a[@href='/login'])[1]")
 	WebElement logInButton;
 	
 /**
  * 	Constructor to Initialize the HUHomePage
- * @param driver
+ *  @param driver
  */
 	public HUHomePage(WebDriver driver) {
 		super(driver);
@@ -31,7 +31,7 @@ public class HUHomePage extends BasePage{
 	}
 	/**
 	 * Method to Click On LoginBUtton
-	 * @return
+	 * @return HULogin page.
 	 */
 	public HULoginPage clickOnLoginButton(){
 		findVisibleElement(By.xpath("(//a[@href='/login'])[1]"), 30);
