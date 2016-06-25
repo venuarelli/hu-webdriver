@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.hu.webdriver.pages.BasePage;
 /**
  * This class contains all the UpDateProfilePage fatures
@@ -44,6 +43,11 @@ public class UpDateProfilePage extends BasePage {
 	 */
 	@FindBy (xpath = "//td[text()='M']")
 	WebElement genderText;
+	/**
+	 * WebElement for UploadButton.
+	 */
+	@FindBy (xpath = "//span[text()='Upload']")
+	WebElement uploadButton;
 	/**
 	 * ConStructor to Initialize UpDateProfilePage.
 	 * @param driver
@@ -101,5 +105,11 @@ public class UpDateProfilePage extends BasePage {
 		findVisibleElement(By.xpath("//td[text()='M']"), 30);
 		String text = genderText.getText();
 		return text;
+	}
+	/**
+	 * Method to click on Uploadbutton.
+	 */
+	public void clickOnUploadButton(){
+		uploadButton.click();
 	}
 }

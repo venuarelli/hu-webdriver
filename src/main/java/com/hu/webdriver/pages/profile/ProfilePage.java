@@ -138,6 +138,11 @@ public class ProfilePage extends BasePage {
 	WebElement editProfile;
 
 	/**
+	 * WebElement for UploadButton.
+	 */
+	@FindBy (xpath = "//span[text()='Upload']")
+	WebElement uploadButton;
+	/**
 	 * Method to click On UpdateProfile
 	 */
 	public void clickOnUpdateProfile() {
@@ -330,6 +335,13 @@ public class ProfilePage extends BasePage {
 		findVisibleElement(By.name("limitedTextArea"), MAXIMUM);
 		fillYourBio.clear();
 		clickOnSaveChangesButton();
+	}
+	
+	/**
+	 * Method to click on Uploadbutton.
+	 */
+	public void clickOnUploadButton(){
+		uploadButton.click();
 	}
 
 }

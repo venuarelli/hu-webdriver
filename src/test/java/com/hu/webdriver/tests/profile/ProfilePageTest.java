@@ -166,5 +166,13 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 		//Verify Gender Data On Page.
 		Assert.assertEquals(actualText, expectedText,"Gendr text is not Matched with Expected");
 	}
-	
+	/**
+	 * Test case to verify upload profile picture.
+	 */
+	@Test(description = "Test case to verify upload profile picture.")
+	public void testUploadPicture(){
+		UpDateProfilePage update = new UpDateProfilePage(webDriver);
+		update.clickOnUploadButton();
+		
+	}
 }
