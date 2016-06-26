@@ -7,6 +7,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.hu.webdriver.pages.HUGroups;
 import com.hu.webdriver.pages.NewsFeedPage;
 import com.hu.webdriver.pages.messages.MessagesPage;
 import com.hu.webdriver.pages.messages.PublicUserProfilePage;
@@ -31,14 +32,14 @@ public class NewsFeedTest extends BaseLoginWebDriverTest{
 	/**
 	 * Before class for loginHU and navigate to newsfeed page.
 	 */
-	@BeforeClass
+	@BeforeClass(groups={HUGroups.NEWSFEED})
 	public void beforeClassLogin(){
 		newsFeedPage = loginHUAndNavigateToNewsFeedPage();
 	}
 	/**
 	 * Method to verify newsfeedpage.
 	 */
-	@Test(description = "Method to verify newsfeedpage.")
+	@Test(groups={HUGroups.NEWSFEED},description = "Method to verify newsfeedpage.")
 	public void verifyNewsFeedPage(){
 		String title  = webDriver.getTitle();
 		System.out.println(title);
@@ -47,7 +48,7 @@ public class NewsFeedTest extends BaseLoginWebDriverTest{
 	/**
 	 * Test Case to verify Send message from user profile.
 	 */
-	@Test(description = "Test Case to verify Send message from user profile.")
+	@Test(groups={HUGroups.NEWSFEED},description = "Test Case to verify Send message from user profile.")
 	public void testSendMessageFromUserProfile(){
 		//click on public user.
 		publicUserProfilePage = newsFeedPage.clickOnPublicUser();
@@ -66,7 +67,7 @@ public class NewsFeedTest extends BaseLoginWebDriverTest{
 	
 	
 	
-	@AfterClass
+	@AfterClass(groups={HUGroups.NEWSFEED})
 	public void afterClassLogout(){
 		//newsFeedPage.
 	}

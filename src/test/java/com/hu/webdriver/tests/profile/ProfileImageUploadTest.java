@@ -1,12 +1,14 @@
 package com.hu.webdriver.tests.profile;
 
 import org.testng.annotations.Test;
+
+import com.hu.webdriver.pages.HUGroups;
 import com.hu.webdriver.pages.profile.ProfilePage;
 import com.hu.webdriver.tests.BaseLoginWebDriverTest;
 
 public class ProfileImageUploadTest extends BaseLoginWebDriverTest{
 
-	@Test
+	@Test(groups={HUGroups.PROFILE})
 	public void testUploadProfileImage(){
 		ProfilePage profilePage = loginHUAndNavigateToProfilePage();
 		profilePage.clickOnUploadButton();

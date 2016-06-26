@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.hu.webdriver.pages.HUGroups;
 import com.hu.webdriver.pages.profile.ProfilePage;
 import com.hu.webdriver.pages.profile.UpDateProfilePage;
 import com.hu.webdriver.tests.BaseLoginWebDriverTest;
@@ -29,7 +30,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 	/**
 	 * Test Case to verify Enter BIO.
 	 */
-	@Test(description = "Test Case to verify Enter BIO.")
+	@Test(groups={HUGroups.PROFILE},description = "Test Case to verify Enter BIO.")
 	public void testEnterBIO(){
 		//Get bio from propetyfile.
 		String bio = propertyUtil.getProperty("hu_bio");
@@ -49,7 +50,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 	/**
 	 * Test Case to Verify EditBIO.
 	 */
-	@Test(description = "Test Case to Verify Edit BIO")
+	@Test(groups={HUGroups.PROFILE},description = "Test Case to Verify Edit BIO")
 	public void testEditBIO(){
 		//Get BIO from Property File.
 		String editBIO = propertyUtil.getProperty("hu_editbio");
@@ -69,7 +70,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 	/**
 	 * Test Case to verify Addding New Symptom.
 	 */
-	@Test(description = "Test case to vrify Adding New Symptom")
+	@Test(groups={HUGroups.PROFILE},description = "Test case to vrify Adding New Symptom")
 	public void testAddANewSymptom(){
 		//Get Symptom Data from Property File.
 		String symptom = propertyUtil.getProperty("hu_symptom");
@@ -88,7 +89,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 	/**
 	 * Test case to verify Adding A New Condition.
 	 */
-	@Test (description = "Test case to verify Adding New Condition")
+	@Test (groups={HUGroups.PROFILE},description = "Test case to verify Adding New Condition")
 	public void testAddANewCondition(){
 		//Get Condition Data from PropertyFile.
 		String condition = propertyUtil.getProperty("hu_condition");
@@ -104,7 +105,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 		//Verify Condition Data On Page.
 		Assert.assertEquals(actualText, expectedText,"Condition is not matched to Expected");
 }
-	@Test(description = "Test Case To verify Adding A New Treatment")
+	@Test(groups={HUGroups.PROFILE},description = "Test Case To verify Adding A New Treatment")
 	public void testAddANewTreatment(){
 		//Get Treatment Data from PropertyPage.
 		String treatement = propertyUtil.getProperty("hu_treatment");
@@ -123,7 +124,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 	/**
 	 * Test Case to verify Edit My DOB
 	 */
-	@Test(description = "Test Case to verify Edit My DOB")
+	@Test(groups={HUGroups.PROFILE},description = "Test Case to verify Edit My DOB")
 	public void testEditMyDOB(){
 		//Get Data from Property Page.
 		String date  = propertyUtil.getProperty("profile.date");
@@ -152,7 +153,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 	/**
 	 * Test Case to Verify Edit Gender
 	 */
-	@Test(description = "Test Case to Verify Edit Gender")
+	@Test(groups={HUGroups.PROFILE},description = "Test Case to Verify Edit Gender")
 	public void testEditGender(){
 		//Set Gender.
 		profilePage.setGender();
@@ -169,7 +170,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 	/**
 	 * Test case to verify upload profile picture.
 	 */
-	@Test(description = "Test case to verify upload profile picture.")
+	@Test(groups={HUGroups.PROFILE},description = "Test case to verify upload profile picture.")
 	public void testUploadPicture(){
 		UpDateProfilePage update = new UpDateProfilePage(webDriver);
 		update.clickOnUploadButton();

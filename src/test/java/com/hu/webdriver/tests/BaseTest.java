@@ -30,7 +30,8 @@ public class BaseTest {
 	/**
 	 * Instance Variable for HUpropertyUtil
 	 */
-	public HUPropertyUtil propertyUtil;
+	public HUPropertyUtil propertyUtil; 
+	
 	/**
 	 * Method  for BaseTest.
 	 */

@@ -1,9 +1,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-  
-<suite name="HUWebdriverSuite" verbose="1" >
-  <test name="HUTests" >
-    <classes>
-       <class name="com.hu.webdriver.tests.newsfeed.NewsFeedTest" />
-    </classes>
-  </test>
+
+<suite name="HUWebdriverSuite" thread-count="5" parallel="false">
+	<!-- <groups>
+		<run>
+			<exclude name="ProfilePage"></exclude>
+		</run>
+	</groups> -->
+	<test name="HUTests">
+		<packages>
+			<package name="com.hu.webdriver.tests.*"></package>
+		</packages>
+	</test>
 </suite>

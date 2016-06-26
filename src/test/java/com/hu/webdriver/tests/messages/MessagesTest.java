@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.hu.webdriver.pages.HUGroups;
 import com.hu.webdriver.pages.NewsFeedPage;
 import com.hu.webdriver.pages.messages.MessagesPage;
 import com.hu.webdriver.pages.messages.PublicUserProfilePage;
@@ -24,14 +25,14 @@ public class MessagesTest  extends BaseLoginWebDriverTest{
 	/**
 	 * Before Class for Login and Navigate to Messages page.
 	 */
-	@BeforeClass
+	@BeforeClass(groups={HUGroups.MESSAGES})
 	public void beforeMethodNavigateToMessagesPage(){
 		messagesPage = loginHuAndNavigateToMessagesPage();
 	}
 	/**
 	 * Test Case to verify Add recipients.
 	 */
-	@Test(description ="Test Case to verify Add recipients.")
+	@Test(groups={HUGroups.MESSAGES},description ="Test Case to verify Add recipients.")
 	public void addRecipients(){
 		messagesPage.clickOnComposeButton();
 		String addRecipients1 = propertyUtil.getProperty("messages.addrecipients1");
@@ -51,7 +52,7 @@ public class MessagesTest  extends BaseLoginWebDriverTest{
 	/**
 	 * Test Case to verify Delete message.
 	 */
-	@Test(description = "Test Case to verify Delete message.")
+	@Test(groups={HUGroups.MESSAGES},description = "Test Case to verify Delete message.")
 	public void testDeleteMessage(){
 		//Select a message.
 		messagesPage.selectMessage();
@@ -67,7 +68,7 @@ public class MessagesTest  extends BaseLoginWebDriverTest{
 	/**
 	 * Test Case to verify undo a message in Inbox.
 	 */
-	@Test(description = "Test Case to verify undo a message in Inbox.")
+	@Test(groups={HUGroups.MESSAGES},description = "Test Case to verify undo a message in Inbox.")
 	public void testUndoMessage(){
 		//Click on Select Message from Inbox.
 		messagesPage.selectMessage();
@@ -85,7 +86,7 @@ public class MessagesTest  extends BaseLoginWebDriverTest{
 	/**
 	 * Test case to verify Delete Multiple Messages in Inbox.
 	 */
-	@Test(description = "Test Case to verify Delete multiple messages in Inbox.")
+	@Test(groups={HUGroups.MESSAGES},description = "Test Case to verify Delete multiple messages in Inbox.")
 	public void testDeleteMultipleMessages(){
 		//Click on Select ALL Button.
 		messagesPage.clickOnSelectAll();
@@ -120,7 +121,7 @@ public class MessagesTest  extends BaseLoginWebDriverTest{
 	/**
 	 * Test Case to verify Compose A Message.
 	 */
-	@Test(description = "Test Case to verify Compose A Message.")
+	@Test(groups={HUGroups.MESSAGES},description = "Test Case to verify Compose A Message.")
 	public void testComposeMessage(){
 		//Click on compose button.
 		messagesPage.clickOnComposeButton();
@@ -151,7 +152,7 @@ public class MessagesTest  extends BaseLoginWebDriverTest{
 	/**
 	 * Test Case to verify EmptySubject.
 	 */
-	@Test(description = "Test Case to verify EmptySubject.")
+	@Test(groups={HUGroups.MESSAGES},description = "Test Case to verify EmptySubject.")
 	public void testEmptySubject(){
 		//click on compose button.
 		messagesPage.clickOnComposeButton();
@@ -228,7 +229,7 @@ public class MessagesTest  extends BaseLoginWebDriverTest{
 	/**
 	 * Test Case to verify Send message from user profile.
 	 */
-	@Test(description = "Test Case to verify Send message from user profile.")
+	@Test(groups={HUGroups.MESSAGES},description = "Test Case to verify Send message from user profile.")
 	public void testSendMessageFromUserProfile(){
 		//click on public user.
 		newsFeedPage.clickOnPublicUser();
