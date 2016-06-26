@@ -8,9 +8,6 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import com.hu.webdriver.pages.NewsFeedPage;
-import com.hu.webdriver.pages.homepage.HUHomePage;
-import com.hu.webdriver.pages.login.HULoginPage;
 import com.hu.webdriver.utils.HUPropertyUtil;
 
 /**
@@ -19,13 +16,24 @@ import com.hu.webdriver.utils.HUPropertyUtil;
  *
  */
 public class BaseTest {
-
-	/*
-	 * Instance variable for Webdriver.
-	 */
-	public WebDriver webDriver;
-	public HUPropertyUtil propertyUtil;
 	
+	 public static final int MAXIMUM = 30;
+	 public static final int MINIMUM = 10;
+	 public static final int ONE = 1;
+	 public static final int TWO = 2;
+	 public static final int FIVE = 5;
+
+	/**
+	 * Instance variable for Webdriver.
+	* */
+	public WebDriver webDriver;
+	/**
+	 * Instance Variable for HUpropertyUtil
+	 */
+	public HUPropertyUtil propertyUtil;
+	/**
+	 * Method  for BaseTest.
+	 */
 	public BaseTest(){
 		propertyUtil = new HUPropertyUtil();
 	}
@@ -80,21 +88,10 @@ public class BaseTest {
 	}
 	
 	/**
-	 * After test for logout from the page and navigate to home page.
+	 * After test logout from the page and navigate to home page.
 	 */
 	@AfterTest
 	public void logOutFromHU(){
 		this.webDriver.quit();
-	}
-	
-	/**
-	 * Method to login HU and navigate to News feed page.
-	 * @return
-	 */
-	public NewsFeedPage loginHUAndNavigateToNewsFeedPage(){
-		HUHomePage homePage = new HUHomePage(webDriver);
-		HULoginPage loginPage = homePage.clickOnLoginButton();
-		loginPage.loginHU();
-		return new NewsFeedPage(webDriver);
 	}
 }

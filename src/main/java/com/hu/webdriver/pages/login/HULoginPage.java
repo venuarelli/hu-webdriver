@@ -14,22 +14,39 @@ import com.hu.webdriver.pages.NewsFeedPage;
  *
  */
 public class HULoginPage extends BasePage{
-
+	/**
+	 * WebElement for userName
+	 */
 	@FindBy (name = "email")
 	WebElement userName;
-	
+	/**
+	 * WebElement for Password
+	 */
 	@FindBy (name ="password")
 	WebElement password;
-	
+	/**
+	 * WebElement for Login
+	 */
 	@FindBy (id = "login-submit-button")
 	WebElement login;
-	
+	/**
+	 * Method to Set UserName
+	 * @param userName
+	 */
 	public void setUserName(String userName){ 
 		clearAndType(this.userName, userName);
 	}
+	/**
+	 * Method to Set Password
+	 * @param password
+	 */
 	public void setPassword(String password){
 		clearAndType(this.password, password);
 	}
+	/**
+	 * Method to Click On Submit Button and Navigate to NewsFeed Page
+	 * @return newsfeedPage
+	 */
 	public NewsFeedPage clickOnSubmit(){
 		login.click();
 		return new NewsFeedPage(driver);
