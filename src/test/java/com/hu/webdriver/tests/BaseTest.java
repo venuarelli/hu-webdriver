@@ -7,7 +7,6 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
 import com.hu.webdriver.utils.HUPropertyUtil;
 
 /**

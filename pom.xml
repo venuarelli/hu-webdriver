@@ -62,8 +62,6 @@
 						<suiteXmlFiles>
 							<suiteXmlFile>src\main\resources\testng.xml</suiteXmlFile>
 						</suiteXmlFiles>
-						<properties>
-						</properties>
 					</configuration>
 				</plugin>
 			</plugins>

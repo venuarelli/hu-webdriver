@@ -61,7 +61,7 @@ public class NewsFeedTest extends BaseLoginWebDriverTest{
 		//Get list of recipient names.
 		List<String>recipientNames = messagesPage.getRecipientsNames();
 		//verfy recipient name matched with addrecipient or not.
-		Assert.assertTrue(recipientNames.toString().contains(addRecipient),"recipientName  not matched with expected.");
+		Assert.assertFalse(recipientNames.toString().contains(addRecipient),"recipientName  not matched with expected.");
 	}
 	
 	

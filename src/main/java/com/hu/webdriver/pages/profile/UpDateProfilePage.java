@@ -36,7 +36,7 @@ public class UpDateProfilePage extends BasePage {
 	/**
 	 * WebElement for ProfilePageText
 	 */
-	@FindBy (xpath ="//span[text()='Hi! I’m aarellivenu']")
+	@FindBy (xpath ="//span[text()='Hi! world']")
 	WebElement profilePageText;
 	/**
 	 * WebElement for Gender Text
@@ -70,6 +70,7 @@ public class UpDateProfilePage extends BasePage {
 	 * @return text
 	 */
 	public String getBruiseText(){
+		findVisibleElement(bruiseText, FIVE);
 		String text = bruiseText.getText();
 		return text;
 	}
@@ -86,6 +87,7 @@ public class UpDateProfilePage extends BasePage {
 	 * @return text
 	 */
 	public String getMethotrexateText(){
+		findVisibleElement(methotrexateText, MAXIMUM);
 		String text = methotrexateText.getText();
 		return text;
 	}

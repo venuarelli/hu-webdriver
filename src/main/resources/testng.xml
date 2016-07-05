@@ -8,7 +8,7 @@
 	</groups> -->
 	<test name="HUTests">
 		<packages>
-			<package name="com.hu.webdriver.tests.*"></package>
+			<package name="com.hu.webdriver.tests.profile"></package>
 		</packages>
 	</test>
 </suite>

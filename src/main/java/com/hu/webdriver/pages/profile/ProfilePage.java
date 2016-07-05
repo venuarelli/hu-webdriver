@@ -225,6 +225,7 @@ public class ProfilePage extends BasePage {
 	 * @param  symptom.
 	 */
 	public void enterSymptom(String symptom) {
+		findVisibleElement(this.symptom, MAXIMUM);
 		clearAndType(this.symptom, symptom);
 	}
 
@@ -233,6 +234,7 @@ public class ProfilePage extends BasePage {
 	 * @param condition.
 	 */
 	public void enterCondition(String condition) {
+		findVisibleElement(this.condition, MAXIMUM);
 		clearAndType(this.condition, condition);
 	}
 
@@ -241,6 +243,7 @@ public class ProfilePage extends BasePage {
 	 * @param treatement.
 	 */
 	public void enterTreatement(String treatement) {
+		findVisibleElement(this.treatement, MAXIMUM);
 		clearAndType(this.treatement, treatement);
 	}
 

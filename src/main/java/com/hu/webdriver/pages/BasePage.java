@@ -100,7 +100,7 @@ public class BasePage {
 	 * @param by
 	 * @param seconds
 	 */
-	public void findClickableelement(By by, int seconds) {
+	public void findClickableElement(By by, int seconds) {
 		WebDriverWait wait = new WebDriverWait(driver, seconds);
 		wait.until(ExpectedConditions.elementToBeClickable(by));
 	}

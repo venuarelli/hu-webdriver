@@ -8,7 +8,7 @@ import com.hu.webdriver.tests.BaseLoginWebDriverTest;
 
 public class ProfileImageUploadTest extends BaseLoginWebDriverTest{
 
-	@Test(groups={HUGroups.PROFILE})
+	@Test(groups={HUGroups.PROFILE},enabled=false)
 	public void testUploadProfileImage(){
 		ProfilePage profilePage = loginHUAndNavigateToProfilePage();
 		profilePage.clickOnUploadButton();
