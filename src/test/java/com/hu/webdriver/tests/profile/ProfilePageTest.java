@@ -24,7 +24,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 	/**
 	 * Before Class for Login nad Navigate to ProfilePage.
 	 */
-	@BeforeClass
+	@BeforeClass(alwaysRun=true)
 	public void beforeMethodNavigateToProfile(){
 		Reporter.log("Executing-----beforeclass");
 		//Login and Navigate to ProfilePage.

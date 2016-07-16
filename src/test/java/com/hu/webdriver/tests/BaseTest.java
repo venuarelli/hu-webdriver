@@ -82,7 +82,7 @@ public class BaseTest {
 	/**
 	 * Before Test for launch home page url.
 	 */
-	@BeforeTest
+	@BeforeTest(alwaysRun=true)
 	public void beforeTest(){
 		Reporter.log("Executing-----beforeTest");
 		this.webDriver = getWebDriver();
@@ -93,7 +93,7 @@ public class BaseTest {
 	/**
 	 * After test logout from the page and navigate to home page.
 	 */
-	@AfterTest
+	@AfterTest(alwaysRun=true)
 	public void logOutFromHU(){
 		this.webDriver.quit();
 	}

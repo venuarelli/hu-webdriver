@@ -53,7 +53,7 @@ public class BaseLoginWebDriverTest extends BaseTest{
 	/**
 	 * AfterClass for Logout.
 	 */
-	@AfterClass
+	@AfterClass(alwaysRun=true)
 	public void afterClassLogout(){
 		NewsFeedPage newsFeedPage = new NewsFeedPage(webDriver);
 		newsFeedPage.logout();
