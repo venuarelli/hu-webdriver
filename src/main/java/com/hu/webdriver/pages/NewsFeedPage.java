@@ -19,7 +19,7 @@ public class NewsFeedPage extends BasePage{
 	 */
 	public NewsFeedPage(WebDriver driver) {
 		super(driver);
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(this.driver, this);
 	}
 	/**
 	 * WebElement for NewsFeed Text

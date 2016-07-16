@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
 
 import com.hu.webdriver.pages.BasePage;
 import com.hu.webdriver.pages.login.HULoginPage;
@@ -35,9 +36,10 @@ public class HUHomePage extends BasePage{
 	 * @return HULogin page.
 	 */
 	public HULoginPage clickOnLoginButton(){
+		Reporter.log("executing----clickOnLoginButton");
 		findVisibleElement(logInButton, MAXIMUM);
 		this.logInButton.click();
-		return new HULoginPage(driver);
+		return new HULoginPage(this.driver);
 	}
 
 }

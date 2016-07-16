@@ -23,7 +23,7 @@ public class ProfilePage extends BasePage {
 	 */
 	public ProfilePage(WebDriver driver) {
 		super(driver);
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(this.driver, this);
 	}
 
 	/**

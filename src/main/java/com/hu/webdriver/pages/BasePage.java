@@ -90,7 +90,7 @@ public class BasePage {
 	 * @param seconds
 	 */
 	public void findVisibleElement(WebElement element, int seconds) {
-		WebDriverWait wait = new WebDriverWait(driver, seconds);
+		WebDriverWait wait = new WebDriverWait(this.driver, seconds);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 

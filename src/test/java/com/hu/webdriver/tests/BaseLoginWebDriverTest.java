@@ -1,5 +1,6 @@
 package com.hu.webdriver.tests;
 
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 
 import com.hu.webdriver.pages.NewsFeedPage;
@@ -34,6 +35,7 @@ public class BaseLoginWebDriverTest extends BaseTest{
 	 */
 	
 	public ProfilePage loginHUAndNavigateToProfilePage(){
+		Reporter.log("Executing-----loginHUAndNavigateToProfilePage");
 		NewsFeedPage newsFeedPage = loginHUAndNavigateToNewsFeedPage();
 		newsFeedPage.clickOnUpdateProfile();
 		return new ProfilePage(webDriver);

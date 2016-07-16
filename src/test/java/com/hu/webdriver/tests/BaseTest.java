@@ -5,8 +5,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+
 import com.hu.webdriver.utils.HUPropertyUtil;
 
 /**
@@ -82,6 +84,7 @@ public class BaseTest {
 	 */
 	@BeforeTest
 	public void beforeTest(){
+		Reporter.log("Executing-----beforeTest");
 		this.webDriver = getWebDriver();
 		this.webDriver.get(getHomePageURL());
 		this.webDriver.manage().window().maximize();
