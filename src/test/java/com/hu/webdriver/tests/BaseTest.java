@@ -5,9 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.testng.Reporter;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 
 import com.hu.webdriver.utils.HUPropertyUtil;
 
@@ -77,24 +74,5 @@ public class BaseTest {
 	public String getHomePageURL(){
 		String url = this.propertyUtil.getProperty("hu_url");
 		return url;
-	}
-	
-	/**
-	 * Before Test for launch home page url.
-	 */
-	@BeforeTest(alwaysRun=true)
-	public void beforeTest(){
-		Reporter.log("Executing-----beforeTest");
-		this.webDriver = getWebDriver();
-		this.webDriver.get(getHomePageURL());
-		this.webDriver.manage().window().maximize();
-	}
-	
-	/**
-	 * After test logout from the page and navigate to home page.
-	 */
-	@AfterTest(alwaysRun=true)
-	public void logOutFromHU(){
-		this.webDriver.quit();
 	}
 }

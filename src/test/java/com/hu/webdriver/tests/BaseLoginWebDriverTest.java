@@ -2,6 +2,8 @@ package com.hu.webdriver.tests;
 
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 import com.hu.webdriver.pages.NewsFeedPage;
 import com.hu.webdriver.pages.home.HUHomePage;
@@ -57,5 +59,24 @@ public class BaseLoginWebDriverTest extends BaseTest{
 	public void afterClassLogout(){
 		NewsFeedPage newsFeedPage = new NewsFeedPage(webDriver);
 		newsFeedPage.logout();
+	}
+	
+	/**
+	 * Before Test for launch home page url.
+	 */
+	@BeforeTest(alwaysRun=true)
+	public void beforeTest(){
+		Reporter.log("Executing-----beforeTest");
+		this.webDriver = getWebDriver();
+		this.webDriver.get(getHomePageURL());
+		this.webDriver.manage().window().maximize();
+	}
+	
+	/**
+	 * After test logout from the page and navigate to home page.
+	 */
+	@AfterTest(alwaysRun=true)
+	public void logOutFromHU(){
+		this.webDriver.quit();
 	}
 }
