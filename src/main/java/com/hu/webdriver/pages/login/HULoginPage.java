@@ -57,7 +57,7 @@ public class HULoginPage extends BasePage{
 	 */
 	public HULoginPage(WebDriver driver) {
 		super(driver);
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(this.driver, this);
 	}
 	
 	/**

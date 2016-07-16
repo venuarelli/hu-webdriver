@@ -1,6 +1,5 @@
 package com.hu.webdriver.pages.home;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,17 +28,15 @@ public class HUHomePage extends BasePage{
  */
 	public HUHomePage(WebDriver driver) {
 		super(driver);
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(this.driver, this);
 	}
 	/**
 	 * Method to Click On LoginBUtton
 	 * @return HULogin page.
 	 */
 	public HULoginPage clickOnLoginButton(){
-		//findVisibleElement(logInButton, MAXIMUM);
-		//findVisibleElement(By.xpath("(//a[@href='/login'])[1]"), MAXIMUM);
-		waitForSeconds(10);
-		logInButton.click();
+		findVisibleElement(logInButton, MAXIMUM);
+		this.logInButton.click();
 		return new HULoginPage(driver);
 	}
 
