@@ -26,10 +26,10 @@ public class BaseLoginWebDriverTest extends BaseTest{
 	 * @return NewsFeedPage.
 	 */
 	public NewsFeedPage loginHUAndNavigateToNewsFeedPage(){
-		HUHomePage homePage = new HUHomePage(webDriver);
+		HUHomePage homePage = new HUHomePage(this.webDriver);
 		HULoginPage loginPage = homePage.clickOnLoginButton();
 		loginPage.loginHU();
-		return new NewsFeedPage(webDriver);
+		return new NewsFeedPage(this.webDriver);
 	}
 	/**
 	 * Methosd to Login HU And navigate to Profile Page.
