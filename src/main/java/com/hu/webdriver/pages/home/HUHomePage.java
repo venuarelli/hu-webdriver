@@ -19,7 +19,7 @@ public class HUHomePage extends BasePage{
 	/**
 	 * WebElement for LoginButton
 	 */
-	@FindBy (xpath = "//a[text()='Log in']")
+	@FindBy (linkText = "Log in")
 	WebElement logInButton;
 	
 /**
