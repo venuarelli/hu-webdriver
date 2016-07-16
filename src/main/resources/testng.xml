@@ -7,8 +7,11 @@
 		</run>
 	</groups> -->
 	<test name="HUTests">
-		<packages>
+		<!-- <packages>
 			<package name="com.hu.webdriver.tests.profile"></package>
-		</packages>
+		</packages> -->
+		<classes>
+			<class name="com.hu.webdriver.tests.profile.ProfilePageTest"/>
+		</classes>
 	</test>
 </suite>

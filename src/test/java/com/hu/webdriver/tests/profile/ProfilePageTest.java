@@ -2,9 +2,7 @@
 
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
-import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.hu.webdriver.pages.HUGroups;
@@ -25,10 +23,8 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 	/**
 	 * Before Class for Login nad Navigate to ProfilePage.
 	 */
-	@BeforeMethod(alwaysRun=true)
+	@BeforeClass(alwaysRun=true)
 	public void beforeMethodNavigateToProfile(){
-		Reporter.log("Executing-----beforeclass");
-		//Login and Navigate to ProfilePage.
 		profilePage = loginHUAndNavigateToProfilePage();
 	}
 	/**
