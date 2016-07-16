@@ -20,7 +20,7 @@ public class HUHomePage extends BasePage{
 	/**
 	 * WebElement for LoginButton
 	 */
-	@FindBy (linkText = "Log in")
+	@FindBy (xpath = "//a[text()='Log in']")
 	WebElement logInButton;
 	
 /**
@@ -37,7 +37,8 @@ public class HUHomePage extends BasePage{
 	 */
 	public HULoginPage clickOnLoginButton(){
 		//findVisibleElement(logInButton, MAXIMUM);
-		findVisibleElement(By.xpath("(//a[@href='/login'])[1]"), MAXIMUM);
+		//findVisibleElement(By.xpath("(//a[@href='/login'])[1]"), MAXIMUM);
+		waitForSeconds(10);
 		logInButton.click();
 		return new HULoginPage(driver);
 	}
