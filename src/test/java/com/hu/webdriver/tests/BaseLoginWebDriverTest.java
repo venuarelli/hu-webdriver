@@ -3,6 +3,7 @@ package com.hu.webdriver.tests;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 
 import com.hu.webdriver.pages.NewsFeedPage;
@@ -64,7 +65,7 @@ public class BaseLoginWebDriverTest extends BaseTest{
 	/**
 	 * Before Test for launch home page url.
 	 */
-	@BeforeTest(alwaysRun=true)
+	@BeforeClass(alwaysRun=true)
 	public void beforeTest(){
 		Reporter.log("Executing-----beforeTest");
 		this.webDriver = getWebDriver();
