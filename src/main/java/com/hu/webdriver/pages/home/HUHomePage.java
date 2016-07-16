@@ -37,7 +37,7 @@ public class HUHomePage extends BasePage{
 	 */
 	public HULoginPage clickOnLoginButton(){
 		//findVisibleElement(logInButton, MAXIMUM);
-		findVisibleElement(By.linkText("Log in"), MAXIMUM);
+		findVisibleElement(By.xpath("(//a[@href='/login'])[1]"), MAXIMUM);
 		logInButton.click();
 		return new HULoginPage(driver);
 	}
