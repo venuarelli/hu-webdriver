@@ -82,9 +82,9 @@ public class BaseTest {
 	 */
 	@BeforeTest
 	public void beforeTest(){
-		WebDriver driver = getWebDriver();
-		driver.get(getHomePageURL());
-		driver.manage().window().maximize();
+		this.webDriver = getWebDriver();
+		this.webDriver.get(getHomePageURL());
+		this.webDriver.manage().window().maximize();
 	}
 	
 	/**
