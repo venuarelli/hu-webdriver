@@ -77,7 +77,7 @@ public class Practice {
 	 * @param element
 	 * @return isSelected
 	 */
-	public boolean isClickable(WebElement element){
+	public boolean isSelected(WebElement element){
 		boolean isSelected = false;
 		isSelected = element.isSelected();
 		return isSelected;

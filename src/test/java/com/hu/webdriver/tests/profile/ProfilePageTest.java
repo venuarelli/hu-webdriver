@@ -2,6 +2,7 @@
 
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -27,6 +28,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 	public void beforeMethodNavigateToProfile(){
 		profilePage = loginHUAndNavigateToProfilePage();
 	}
+	
 	/**
 	 * Test Case to verify Enter BIO.
 	 */
@@ -64,7 +66,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 		String actualText = upDateProfilePage.getBIOText();
 		String expectedText = propertyUtil.getProperty("hu_editbio");
 		//Verify BIO Data On Page.
-		Assert.assertFalse(actualText.contains(expectedText),"Bio data Text is not Matched with Expected");
+		Assert.assertEquals(actualText,expectedText,"Bio data Text is not Matched with Expected");
 	}
 	
 	/**
@@ -76,6 +78,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 		String symptom = propertyUtil.getProperty("hu_symptom");
 		//Enter Symptom Data.
 		profilePage.enterSymptom(symptom);
+		profilePage.waitForSeconds(TWO);
 		profilePage.enterSymptom(""+Keys.ENTER);
 		//Click On Save Changes.
 		profilePage.clickOnSaveChangesButton();
@@ -96,6 +99,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 		String condition = propertyUtil.getProperty("hu_condition");
 		//Enter Condition Data.
 		profilePage.enterCondition(condition);
+		profilePage.waitForSeconds(TWO);
 		profilePage.enterCondition(""+Keys.ENTER);
 		//Click On Save Changes.
 		profilePage.clickOnSaveChangesButton();
@@ -113,6 +117,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 		String treatement = propertyUtil.getProperty("hu_treatment");
 		//Enter Treatment Data.
 		profilePage.enterTreatement(treatement);
+		profilePage.waitForSeconds(TWO);
 		profilePage.enterTreatement(""+Keys.ENTER);
 		//Click On Save Changes.
 		profilePage.clickOnSaveChangesButton();
@@ -129,6 +134,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 	 */
 	@Test(groups={HUGroups.PROFILE},description = "Test Case to verify Edit My DOB")
 	public void testEditMyDOB(){
+		profilePage.scrollToBottom(webDriver);
 		//Get Data from Property Page.
 		String date  = propertyUtil.getProperty("profile.date");
 		//Enter date Data. 
@@ -151,7 +157,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 		String actualText = upDateProfilePage.getProfilePageText();
 		String expectedText = propertyUtil.getProperty("profile.profiletext");
 		//Verify DOB Data On Page.
-		Assert.assertEquals(actualText, expectedText,"Profile Text is not Matched with Expected");
+		Assert.assertTrue(actualText.contains(expectedText),"Profile Text is not Matched with Expected");
 	}
 	/**
 	 * Test Case to Verify Edit Gender
@@ -179,4 +185,10 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 		update.clickOnUploadButton();
 		
 	}*/
+	
+	 @AfterMethod(alwaysRun=true)
+	public void afterMethod(){ 
+		UpDateProfilePage upDateProfilePage = new UpDateProfilePage(webDriver);
+		upDateProfilePage.clickOnEditProfile();
+	}
 }

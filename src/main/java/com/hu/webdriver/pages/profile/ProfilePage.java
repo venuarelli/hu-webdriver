@@ -31,6 +31,13 @@ public class ProfilePage extends BasePage {
 	 */
 	@FindBy(xpath = "//a[@href='/profile/edit']")
 	WebElement updateProfile;
+	
+	/**
+	 * WebElement for NewsFeed
+	 */
+	@FindBy(id = "sitebar-newsfeed-button")
+	WebElement newsFeed;
+	
 	/**
 	 * WebElement for FillYour Bio
 	 */
@@ -84,7 +91,7 @@ public class ProfilePage extends BasePage {
 	/**
 	 * WebElement for Treatments
 	 */
-	@FindBy(xpath = "(//input[@type='text'])[3]")
+	@FindBy(xpath = "(//input[@type='text'])[4]")
 	WebElement treatement;
 	/**
 	 * WebElement for BruiseText
@@ -345,6 +352,15 @@ public class ProfilePage extends BasePage {
 	 */
 	public void clickOnUploadButton(){
 		uploadButton.click();
+	}
+	
+	public void clickOnNewsFeed(){
+		newsFeed.click();
+	}
+	
+	public void navigateToProfilePage(){
+		clickOnDropDownForProfile();
+		clickOnNewsFeed();
 	}
 
 }

@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="HUWebdriverSuite" thread-count="5" parallel="false">
+<suite name="HUWebdriverSuite" thread-count="2" parallel="methods">
 	<!-- <groups>
 		<run>
 			<exclude name="ProfilePage"></exclude>
 		</run>
 	</groups> -->
-	<test name="HUTests">
+	<test name="HUTests" >
 		<!-- <packages>
 			<package name="com.hu.webdriver.tests.profile"></package>
 		</packages> -->

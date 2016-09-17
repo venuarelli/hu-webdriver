@@ -14,6 +14,11 @@ import com.hu.webdriver.pages.BasePage;
  */
 public class UpDateProfilePage extends BasePage {
 	/**
+	 * WebElement for EditProfile
+	 */
+	@FindBy(id = "profile-edit-button")
+	WebElement editProfile;
+	/**
 	 * WebElement for BIO Text.
 	 */
 	@FindBy (xpath = "//div[@class='entity-centerText']/span")
@@ -36,7 +41,7 @@ public class UpDateProfilePage extends BasePage {
 	/**
 	 * WebElement for ProfilePageText
 	 */
-	@FindBy (xpath ="//span[text()='Hi! world']")
+	@FindBy (xpath ="//span[contains(text(),'Hello world')]")
 	WebElement profilePageText;
 	/**
 	 * WebElement for Gender Text
@@ -60,7 +65,7 @@ public class UpDateProfilePage extends BasePage {
 	 * Method to Get BIOText
 	 */
 	public String getBIOText(){
-		findVisibleElement(By.xpath("//div[@class='entity-centerText']/span"), 30);
+		findVisibleElement(By.xpath("//div[@class='entity-centerText']/span"), MAXIMUM);
 		String text = bioText.getText();
 		return text;
 	}
@@ -87,7 +92,7 @@ public class UpDateProfilePage extends BasePage {
 	 * @return text
 	 */
 	public String getMethotrexateText(){
-		findVisibleElement(methotrexateText, MAXIMUM);
+		findVisibleElement(By.xpath("//a[text()='Methotrexate']"), MAXIMUM);
 		String text = methotrexateText.getText();
 		return text;
 	}
@@ -113,5 +118,12 @@ public class UpDateProfilePage extends BasePage {
 	 */
 	public void clickOnUploadButton(){
 		uploadButton.click();
+	}
+	/**
+	 * Method to click on EditProfile.
+	 */
+	public void clickOnEditProfile(){
+		findVisibleElement(By.id("profile-edit-button"), MAXIMUM);
+		editProfile.click();
 	}
 }
