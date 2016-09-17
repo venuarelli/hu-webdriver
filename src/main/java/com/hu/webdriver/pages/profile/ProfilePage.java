@@ -288,10 +288,10 @@ public class ProfilePage extends BasePage {
 	 * Method to Select Date Drop Down
 	 * @param date.
 	 */
-	public void selectDateDropDown(String date) {
-		findVisibleElement(By.xpath("(//select[contains(class,day)])[1]"), 30);
+	public void selectDateDropDown(String day) {
+		findVisibleElement(By.className("form-control form-control-day"), 30);
 		Select select = new Select(dateDropDown);
-		select.selectByValue(date);
+		select.selectByValue(day);
 	}
 
 	/**
@@ -299,7 +299,7 @@ public class ProfilePage extends BasePage {
 	 * @param month.
 	 */
 	public void selectMonthDropDown(String month) {
-		findVisibleElement(By.xpath("(//select[contains(class,month)])[2]"), 30);
+		findVisibleElement(By.className("form-control form-control-month"), 30);
 		Select select = new Select(monthDropDown);
 		select.selectByValue(month);
 	}
@@ -309,7 +309,7 @@ public class ProfilePage extends BasePage {
 	 * @param year.
 	 */
 	public void selectYearDropDown(String year) {
-		findVisibleElement(By.xpath("(//select[contains(class,year)])[3]"), 30);
+		findVisibleElement(By.className("form-control form-control-year"), 30);
 		Select select = new Select(yearDropDown);
 		select.selectByVisibleText(year);
 	}

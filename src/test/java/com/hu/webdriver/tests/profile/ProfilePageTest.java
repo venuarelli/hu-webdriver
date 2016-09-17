@@ -138,14 +138,17 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 		//Get Data from Property Page.
 		String date  = propertyUtil.getProperty("profile.date");
 		//Enter date Data. 
+		profilePage.waitForSeconds(TWO);
 		profilePage.selectDateDropDown(date);
 		//Get Data from Property Page.
 		String month  = propertyUtil.getProperty("profile.month");
 		//Enter Month Data. 
+		profilePage.waitForSeconds(TWO);
 		profilePage.selectMonthDropDown(month);
 		//Get Data from Propety Page.
 		String year = propertyUtil.getProperty("profile.year");
 		//Enter year Data. 
+		profilePage.waitForSeconds(TWO);
 		profilePage.selectYearDropDown(year);
 		//Click On Save Changes.
 		profilePage.clickOnSaveChangesButton();
@@ -166,6 +169,7 @@ public class ProfilePageTest extends BaseLoginWebDriverTest{
 	public void testEditGender(){
 		//Set Gender.
 		profilePage.setGender();
+		profilePage.waitForSeconds(TWO);
 		//Click On Save Changes.
 		profilePage.clickOnSaveChangesButton();
 		//Creating Object for UpdateProfile Page.
